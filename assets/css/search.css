@@ -1,0 +1,8 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #results .card, #generalHospitals .card {
+    margin-bottom: 20px;
+  }
+  

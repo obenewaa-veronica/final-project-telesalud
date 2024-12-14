@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your cart</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/display_cart.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Your Cart</h2>
+        <div class="row" id="cart-items">
+            <!--cart items will be displayed dynamically-->
+        </div>
+
+        <div id="cart-total" class="mt-3">
+            <h4>Total : $<span id="total-price">0.00</span></h4>
+        </div>
+
+        <button class="btn btn-danger mt-3" onclick="clearCart()">Clear Cart</button>
+
+        <button class="btn btn-primary mt-3" id="order-now-btn" onclick="orderNow()">Order Now</button>
+    </div>
+
+    <script src="../assets/js/display_cart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

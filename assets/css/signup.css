@@ -1,0 +1,140 @@
+* {
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*Body styling*/
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+    overflow-y: scroll;
+}
+
+/*applying background image and bluring it, using before to ensure that content above the
+background picture is not distorted*/
+body::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image:url("../images/bg\ blur2.jpg");
+	background-size: cover;
+	background-position: center;
+	filter: blur(5px);
+	z-index:-1;
+}
+
+
+/*Styling signup class*/
+.signup-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+    overflow-y: scroll;
+	
+}
+
+/*Styling signup class*/
+.signup-box {
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 40px;
+	border-radius: 10px;
+	text-align: center;
+	width: 320px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1)
+	
+}
+
+/*heading style*/
+h1 {
+	margin-bottom: 30px;
+	font-size: 20px;
+}
+
+/*Styling input class*/
+.input-group {
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+.input-group input:focus {
+	outline:0;
+}
+
+.input-group.success input {
+	border-color: #2ec8a6;
+}
+
+.input-group.error input {
+	border-color: #ff3860;
+}
+
+.input-group .error {
+	color: #ff3860;
+	font-size: 9px;
+	/*height: 13px;*/
+}
+
+/*styling label*/
+label {
+	display: block;
+	margin-bottom: 3px;
+	font-size: 14px;
+}
+
+/*styling the input box*/
+input {
+	width:100%;
+	padding: 5%;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+/*styling the signup button*/
+button {
+	width: 100%;
+	padding: 5%;
+	border: none;
+	background-color: #2ec8a6;
+	color: white;
+	border-radius: 30px;
+	cursor: pointer;
+	margin-top: 20px;
+	/*margin-bottom: 30px;*/
+	font-size: 16px;
+}
+
+
+button:hover {
+	background-color: #077d63;
+}
+
+/*styling paragraph*/
+p {
+	/*margin-bottom: 20px;*/
+	margin-top: 20px;
+	font-size: 14px;
+}
+
+/*styling both paragraph and the anchor tag */
+p a {
+	text-decoration: none;
+	color: #2ec8a6;
+}
+
+p a:hover {
+	text-decoration: underline;
+}

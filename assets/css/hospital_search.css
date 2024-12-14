@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+    --maincolor:#2ec8a6;
+    --secondcolor:#f8a803;
+    --thirdcolor:#f4ab01;
+    --textcolor:#4A5764;
+}
+*{
+    margin:0; 
+    padding:0;
+    box-sizing: border-box;
+    outline: none; 
+    border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition:all .2s linear;
+    font-family: "Inter", sans-serif;
+    
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    padding-top: 19rem;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    width: 100%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    z-index: 1000;
+    background-color: white !important;
+    margin-bottom: 50px;
+    /*overflow-x: scroll;*/
+
+}
+.logo{
+    width: 170px;
+}
+.logo img{
+    width: 100%;
+}
+.navbar a{
+    color: var(--textcolor);
+    font-size: 1.7rem;
+    margin: 1rem;
+    position: relative;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.navbar a:hover{
+    color: var(--maincolor);
+}
+
+.navbar a::after{
+    content: "";
+    background-color: var(--maincolor);
+    width: 0;
+    position: absolute;
+    height: 0.2rem;
+    left: 0;
+    margin-top: 0.5rem;
+    top: 100%;
+    transition: 0.5s;
+}
+.navbar a:hover::after{
+    width: 100%;
+}
+
+#menu-bars{
+    color: var(--textcolor);
+    font-size: 2.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    display: none;
+}
+#menu-bars:hover{
+    color: var(--maincolor);
+}
+.right-icons .btn{
+
+    padding: 1.2rem 2rem;
+    font-size: 1.7rem;
+    background: var(--maincolor);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.right-icons .btn:hover{
+    background-color: var(--secondcolor);
+}
+
+/* Search Bar */
+.search-bar {
+    margin-left: 20px;
+}
+
+.search-bar-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 3px;
+    /*background-color: #f9f9f9;*/
+}
+
+.search-icon i {
+    color:#2ec8a6;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.search-control {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 200px;
+}
+
+
+/* .container {
+    margin-top: 3rem;;
+} */
+
+.container {
+    display: flex;              
+    justify-content: flex-start;/* Align items to the start of the container */
+    align-items: center;        /* Center items vertically */
+    gap: 15px;                  /* Add some space between the items */
+}
+
+/* Style the select elements */
+#hospitalDropdown, #countryDropdown {
+    width: auto;                /* Allow the width to adjust based on content */
+    margin-right: 10px;         /* Add some space between the dropdowns */
+}
+
+#hospitalsearchButton {
+    margin-left: 10px;          /* Add some space between the button and the dropdowns */
+}
+
+
+/* #specialityDropdown {
+   /* width: 100%;*/
+    /* display: block;
+    margin: 1rem auto;
+    font-size: 1.8rem;
+    padding: 1rem 0; }*/
