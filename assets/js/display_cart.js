@@ -1,3 +1,4 @@
+
 // Utility function to get cart from local storage
 function getCart() {
     let cart = localStorage.getItem("cart");
@@ -12,50 +13,122 @@ function getCart() {
     return cart;
 }
 
+
+function addToCart(medicationID, name, price, pictureURL) {
+    let cart = getCart();
+
+    // Check if the item already exists in the cart
+    const existingItem = cart.find(item => String(item.medicationID) !== String(medicationID));
+
+    if (existingItem) {
+        // If the item already exists, just increase the quantity
+        existingItem.quantity += 1;
+    } else {
+        // If the item doesn't exist, create a new entry with quantity set to 1
+        const newItem = {
+            medicationID: medicationID,
+            name: name,
+            price: price,
+            pictureURL: pictureURL,
+            quantity: 1  
+        };
+        cart.push(newItem);
+    }
+
+    saveCart(cart); 
+}
+
+
 // Utility function to save cart to local storage
 function saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+// Function to update the total price displayed on the page
+function updateTotalPrice() {
+    const cart = getCart(); 
+    let totalPrice = 0;
+
+    // Loop through the cart items and sum up their prices
+    cart.forEach(item => {
+        totalPrice += item.price; 
+    });
+
+    // Update the total price displayed in the HTML
+    const totalPriceElement = document.getElementById("total-price");
+    totalPriceElement.textContent = totalPrice.toFixed(2); 
+}
+
+
 // Function to remove an item from the cart by medicationID
 function removeFromCart(medicationID) {
     let cart = getCart();
-    cart = cart.filter(item => item.medicationID !== medicationID);
+    const originalLength = cart.length;
+    console.log('Original Cart Length:', originalLength);
+
+    // Log before filtering
+    console.log('Cart before removal:', cart);
+    console.log('Removing medicationID:', medicationID);
+
+    // Filter out the item from the cart
+    //cart = cart.filter(item => item.medicationID !== medicationID);
+    cart = cart.filter(item => String(item.medicationID) !== String(medicationID));
+
+    console.log('Filtered cart:', cart);  // Log after filtering
+
+    // Save the updated cart
     saveCart(cart);
-    console.log(`Item removed from cart: ${medicationID}`);
+    console.log('Updated cart saved:', cart);
+
+    // Check if cart length has changed
+    if (cart.length !== originalLength) {
+        console.log('Cart length updated:', cart.length);
+        
+        updateTotalPrice();
+        displayCart();
+    }
 
     // Remove the item's card from the DOM
-    const itemCard = document.querySelector(`[data-medication-id="${medicationID}"]`);
+    const itemCard = document.getElementById(`item-${medicationID}`);
     if (itemCard) {
         itemCard.remove();
     }
+
+    console.log(`Item removed from cart: ${medicationID}`);
 }
+
     
-function updateCart(medicationID, newQuantity) {
+
+
+
+function updateCart(medicationID) {
     console.log(`Updating cart item with ID: ${medicationID}`);
-    const cart = getCart();
-    console.log(cart);
+    let cart = getCart(); // Retrieve the cart from localStorage
+    console.log('Current Cart:', cart); // Log the cart to check its contents
 
-    const item = cart.find(item => item.medicationID === medicationID);
-    console.log(item);
-    if (item) {
-        if (newQuantity > 0) {
-            item.quantity = newQuantity; // Update the quantity
-        } else {
-            // Remove item if quantity is 0 or less
-            removeFromCart(medicationID);
-        }
+    // Find the index of the item in the cart by medicationID
+    const itemIndex = cart.findIndex(item => String(item.medicationID) !== String(medicationID)); 
+    
+    console.log('Found Item Index:', itemIndex);
 
-        saveCart(cart); // Save the updated cart
-        //console.log(`Updated cart: ${JSON.stringify(cart)}`);
+    if (itemIndex !== -1) {
+        // If the item exists, remove it from the cart
+        cart.splice(itemIndex, 1); // Remove the item from the cart array
+        saveCart(cart); // Save the updated cart to localStorage
+        console.log(`Updated cart: ${JSON.stringify(cart)}`);
+
+        
+        window.location.href = "../view/virtualpharmacy.php"; // Redirect to virtualpharmacy.php to replace the item
     } else {
         console.log("Item not found in cart.");
     }
 }
 
 
+
 // Function to display the cart items dynamically
 function displayCart() {
+   // console.log('displayCart() function called');
     const cart = getCart();
     const cartItemsContainer = document.getElementById("cart-items");
     const totalPriceElement = document.getElementById("total-price");
@@ -78,6 +151,7 @@ function displayCart() {
             const card = document.createElement('div');
             card.classList.add('col-md-4');
             card.classList.add('cart-card');
+            card.id = `item-${item.medicationID}`;
             card.innerHTML = `
                 <div class="card">
                     <img src="${item.pictureURL}" class="card-img-center" alt="${item.name}">
@@ -96,6 +170,7 @@ function displayCart() {
     }
 
     // Update the total price
+    //totalPriceElement.textContent = totalPrice.toFixed(2);
     totalPriceElement.textContent = totalPrice.toFixed(2);
 }
 

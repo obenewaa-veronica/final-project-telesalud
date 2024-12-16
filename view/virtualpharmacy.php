@@ -87,11 +87,15 @@ $result = mysqli_query($conn, $query);
                                 <i class='fal fa-shopping-cart cart'></i>
                             </button>
 
-                            <!-- Buy Now form -->
-                            <form action='../functions/check_out.php' method='get' class='buy-now'>
-                                <input type='hidden' name='medicationID' value='{$medication['medicationID']}'>
-                                <button type='submit' class='buy-btn'>Buy Now</button>
-                            </form>
+                            <!-- Buy Now button, with dynamic data -->
+                            <button class='btn btn-primary mt-3' id='buy-now-btn' data-product-id='{$medication['medicationID']}' 
+                                    data-name='{$medication['name']}' 
+                                    data-price='{$medication['price']}'
+                                    data-description='{$medication['description']}'
+                                    data-picture='{$medication['pictureURL']}'>
+                                Order Now
+                            </button>
+
 
                         </div>
                     </div>
@@ -179,16 +183,6 @@ $result = mysqli_query($conn, $query);
                 <a href="#">Contact Us</a>
             </div>
 
-            <!--<div class="col">
-                <h4>My Account</h4>
-                <a href="#">Sign In</a>
-                <a href="#">View Cart</a>
-                <a href="#">My Account</a>
-                <a href="#">My Wishlist</a>
-                <a href="#">Track my Order</a>
-                <a href="#">Help</a>
-
-            </div>-->
 
             <div class="col install">
                 <h4>Install App</h4>
@@ -213,6 +207,7 @@ $result = mysqli_query($conn, $query);
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <script src="../assets/js/checkout.js"></script>
     <script src="../assets/js/add_cart.js"></script>
     <script src="../assets/js/virtualpharmacy.js"></script>
 </body>

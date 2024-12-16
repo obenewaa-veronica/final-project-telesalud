@@ -1,8 +1,8 @@
-.cart-card {
+.card {
     margin-bottom: 20px;
 }
-.cart-card img {
+.card-img {
     max-width: 100px;
-    max-height: 100px;
+    height:auto;
 }
     

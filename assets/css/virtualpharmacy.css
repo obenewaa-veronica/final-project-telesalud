@@ -266,6 +266,7 @@ flex-wrap: wrap
 
 #product1 .pro img{
   width: 100%;
+  height: auto;
   border-radius: 20px;
 }
 
@@ -309,10 +310,11 @@ flex-wrap: wrap
   position: absolute;
   bottom: 20px;
   right: 10px;
+  cursor: pointer;
   
 }
 
-#product1 .pro .buy-btn {
+#product1 .pro #buy-now-btn {
   padding: 10px 20px;
   background-color: #27ae60;
   color: white;
@@ -321,7 +323,7 @@ flex-wrap: wrap
   cursor: pointer;
 }
 
-.buy-btn:hover {
+#buy-now-btn:hover {
   background-color: #2ecc71;
 }
 
