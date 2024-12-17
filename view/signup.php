@@ -50,7 +50,7 @@
 
                 <div class="input-group">
                     <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" placeholder="233-458-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    <input type="tel" id="phone" name="phoneNumber" placeholder="233-458-6789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
 					<div class="error" id="phone-error"></div>
 				</div>
 

@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_start();
 
-include '../settings/config.php';
+include '../settings/configuration.php';
 
 //fetch hospitals by countries
 $response = [];
@@ -222,8 +222,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="#Home">About</a>
-            <a href="#Home">Search</a>
-            <a href="#Home">Pharmacy</a>
+            <a href="../view/search.html">Search</a>
+            <a href="../view/virtualpharmacy.php">Pharmacy</a>
             <a href="#Home">Contact</a>
         </nav>
 

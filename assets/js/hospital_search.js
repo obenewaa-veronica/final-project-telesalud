@@ -12,9 +12,9 @@ function searchHospitals() {
 
     // Determine which parameter to send in the request
     if (speciality) {
-        url = `hospital_search.php?speciality=${encodeURIComponent(speciality)}`;
+        url = `../action/hospital_search.php?speciality=${encodeURIComponent(speciality)}`;
     } else if (country) {
-        url = `hospital_search.php?country=${encodeURIComponent(country)}`;
+        url = `../action/hospital_search.php?country=${encodeURIComponent(country)}`;
     }
 
     async function getData() {
@@ -53,7 +53,7 @@ document.getElementById("bookingForm").addEventListener("submit", (event) => {
     // }
 
     //submit booking form
-    fetch("hospital_search.php", {
+    fetch("../action/hospital_search.php", {
         method: "POST",
         body: formData
     })

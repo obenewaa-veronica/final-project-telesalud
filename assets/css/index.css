@@ -39,6 +39,7 @@ header{
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
     z-index: 1000;
     background-color: white !important;
+    text-decoration: none;
 
 }
 .logo{
@@ -53,6 +54,7 @@ header{
     margin: 1rem;
     position: relative;
     transition: 0.5s;
+    text-decoration: none;
 }
 .navbar a:hover{
     color: var(--maincolor);
@@ -169,13 +171,14 @@ header{
 
 .home-btn{
     display: flex;
-   
+    text-decoration: none;
     align-items: center;
     gap: 2rem;
     margin-top: 2rem;
 }
 .home-btn a{
     display: inline-block;
+    text-decoration: none;
     border-radius: 5px;
     padding: 1.5rem 3rem;
     background-color: var(--maincolor);
@@ -306,36 +309,30 @@ header{
 .main-contact {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 20px; /* Space between the map and form */
-    /*padding: 50px;*/
+    /*align-items: flex-start;*/
+    padding:300px;
     margin-top: 20px;
-    max-width: 100%;
+    width: 100px;
     /*padding: 100px 0;*/
    
     
 }
 
-.contact-left, .contact-right {
+/* .contact-left, .contact-right {
     /*float: 1;*/
-    float: left;
-    width: 50%;
-    /*display: inline-block;*/
-    
-    
-}
+    /* float: left;
+    width: 50%; */
+    /*display: inline-block;} */
 
-.contact-left iframe {
+/* .contact-left iframe {
     width: 100%; /* Full width of the left container */
-    height: 450px;
+    /* height: 450px;
     border: 0;
-    /*flex: 2;*/
-}
+    flex: 2; } */
 
 .contact-right {
     background-color: #f9f9f9; 
-    /*padding: 100px;*/
-    float: left;
+    padding: 300px;
     border-radius: 8px; /* Optional: Rounding the corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow for a card effect */
 }
@@ -378,3 +375,337 @@ header{
 .btn-submit:hover {
     background-color: #218838;
 }
+
+
+
+#newsletter  {
+    display: flex;
+    margin-top: 50px;
+   
+    margin-left: 5px;
+    margin-right: 5px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url(https://i.postimg.cc/R0Bs4qqt/b14.png);
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #28a745;
+    padding: 50px;
+  }
+  
+  #newsletter h4{
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+  }
+  
+  #newsletter p{
+    color: #000000;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  #newsletter p span{
+    color: #ffbd27;
+    }
+  
+  #newsletter input{
+    height: 3.125rem;
+    width: 100%;
+    font-size: 14px;
+    padding: 0 1.25em;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  #newsletter button{
+    background-color: #088178;
+    color: #fff;
+    white-space: nowrap;
+    border-left-right-radius: 0; 
+    border-left-right-radius: 0;
+  }
+  
+  #newsletter .form{
+    display: flex;
+    width: 40%;
+    
+  }
+
+  
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  
+  footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    margin-left: 50px
+  
+  }
+  
+  footer .sec{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  
+    
+  }
+  
+  footer .logo{
+    margin-bottom: 20px;
+    width: 100px;
+  }
+  
+  footer h4{
+    font-size: 14px;
+    padding-bottom: 20px
+  }
+  
+  footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+  }
+  
+  
+  footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #28a745;
+    margin-bottom: 10px;
+  }
+  
+  footer .follow{
+    margin-top: 20px
+  }
+  
+  footer .follow i{
+    color: #465b52;
+    padding-right: 5px;
+    cursor: pointer;
+    
+  }
+  
+  footer .follow i:hover, footer a:hover {
+    color: #088178;
+   
+  }
+  
+  footer .install .row img{
+    border: 1px solid #088178; 
+    border-radius: 6px;
+      
+  }
+  
+  footer .install img{
+    margin: 10px 0 15px 0
+  }
+  
+  
+  footer .copyright{
+    width: 100%;
+    text-align: center
+     
+  }
+  
+  
+  @media (max-width: 920px) {
+    
+    .section-p1 {
+      padding: 40px 40px  
+    }
+    
+    #navbar{
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: #E3E6F3;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 80px 0 0 10px;
+      transition: 0.3s
+      }
+    
+    #navbar.active{
+    right: 0;
+  }
+  
+    #navbar li{
+      margin-bottom: 25px
+    }
+    
+    #mobile{
+  display: flex;
+    align-items: center
+  }
+    #mobile i{
+      font-size: 32px;
+      color: #1a1a1a;
+      padding-left: 20px
+    }
+    body #lg-bag{
+      display: none
+    }
+    
+    #close{
+    display: initial;
+    position: absolute;
+    top: -280px;
+    left: 20px;
+    color: #222;
+    font-size: 32px;  
+  }
+    
+    #lg-bag{
+      display: none
+    }
+    
+    .quantity{
+      top: 15px;
+    left: 83%;
+    }
+     
+    #hero{
+    height: 70vh;
+    padding: 0 80px;
+    background-position: top 30% right 30%
+   }
+  
+    #feature {
+    justify-content: center;
+      
+  }
+    
+    #feature .fe-box {
+      margin: 15px 15px
+    }
+    
+    #product1 .pro-container{
+      justify-content: center
+    }
+    
+    #product1 .pro{
+      margin: 15px;
+    }
+    
+    #banner{
+      height: 25vh
+    }
+    
+    #sm-banner .banner-box{
+      min-width: 100%;
+      height: 30vh;
+    }
+    
+    #banner3{
+      padding: 0 40px
+    }
+    
+    #banner3 .banner-box{
+      width: 28%
+    }
+    
+    #newsletter .form {
+      width: 70%
+    }
+    
+  }
+  
+  @media (max-width: 477px) {
+    .section-p1{
+      padding: 20px
+    }
+    
+    #header{
+      padding: 10px 30px;
+    }
+    
+    .quantity{
+      top: 7px;
+    left: 80%;
+    }
+    
+    #hero{
+      padding: 0 20px;
+      background-position: 55%;
+    }
+    
+    h2 {
+      font-size: 30px
+    }
+    
+    h1{
+      font-size: 28px
+    }
+    
+    p{
+      line-height: 24px;
+      font-size: 10px;
+    }
+    
+    #hero button{
+      margin-right: 10px
+    }
+    
+    #feature{
+      justify-content: space-between;
+    }
+    
+    #feature .fe-box{
+      width: 155px;
+      margin: 0 0 15px 0;
+    }
+    
+    #product1 .pro{
+      width: 100%
+    }
+    
+    #banner{
+      height: 40vh;
+    }
+    
+    #sm-banner .banner-box{
+      height: 40vh;
+  }
+    
+    #sm-banner .banner-box2 {
+      margin-top: 20px;
+    }
+    
+    #banner3{
+      padding: 0 20px;
+    }
+    
+    #banner3 .banner-box{
+      width: 100%;
+    }
+    
+    #newsletter .form{
+      width:  100%
+    }
+    
+    #newsletter{
+      padding: 40px 20px;
+    }
+    
+    footer .copyright{
+      text-align: start;
+    }
+  }

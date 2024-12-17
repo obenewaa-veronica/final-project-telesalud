@@ -43,6 +43,12 @@ $result = mysqli_query($conn, $query);
                     <!--<span class="quantity">0</span>-->
                 </li>
                 <li><a href="#" id="close"<i class="far fa-times"></i></a></li>
+
+                <li>
+                    <a href="../functions/logout.php" class="btn btn-danger btn-sm"
+                        onclick="return confirm('Are you sure you want to logout?');">Logout
+                    </a> 
+                </li>
             </ul>
         </div>
         <div id="mobile">

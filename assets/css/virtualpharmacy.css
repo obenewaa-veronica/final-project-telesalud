@@ -266,7 +266,7 @@ flex-wrap: wrap
 
 #product1 .pro img{
   width: 100%;
-  height: auto;
+  height: 50vh;
   border-radius: 20px;
 }
 
@@ -338,6 +338,7 @@ flex-wrap: wrap
   height: 40vh;
   background-position: center;
   background-size: cover;
+  margin-bottom: 20px;
   
 }
 
@@ -347,6 +348,7 @@ flex-wrap: wrap
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0 80px;
+  margin-top: 20px;
 }
 
 #banner3 .banner-box{
@@ -361,7 +363,9 @@ flex-wrap: wrap
   background-position: center;
   background-size: cover;
   padding: 30px;
-  margin-bottom: 20px
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 #banner3 h2{
@@ -377,11 +381,14 @@ flex-wrap: wrap
 }
 
 #banner3 .banner-img2{
-  background-image: url(../images/painrelief.jpeg)
+  background-image: url(../images/painrelief.jpeg);
+  border-radius: 10px;
+
 }
 
 #banner3 .banner-img3{
-   background-image: url(../images/digestive.jpeg)
+   background-image: url(../images/digestive.jpeg);
+   border-radius: 10px;
 }
 
 #newsletter  {
