@@ -214,7 +214,7 @@ $result = mysqli_query($conn, $query);
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <script src="../assets/js/checkout.js"></script>
-    <script src="../assets/js/add_cart.js"></script>
+    <script src="../assets/js/display_cart.js"></script>
     <script src="../assets/js/virtualpharmacy.js"></script>
 </body>
 

@@ -30,7 +30,7 @@ function addToCart(medicationID, name, price, pictureURL) {
             name: name,
             price: price,
             pictureURL: pictureURL,
-            quantity: 1  
+            //quantity: 1  
         };
         cart.push(newItem);
     }
@@ -145,6 +145,7 @@ function displayCart() {
     } else {
         // Loop through each cart item and create a card for it
         cart.forEach(item => {
+            console.log("item is",item);
             totalPrice += item.price;
 
             // Create the card element for each medication
